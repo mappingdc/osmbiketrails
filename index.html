@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta name="viewport" content="width=1024, user-scalable=no">
+
+	<title>Adding Bike Trails to OpenStreetMap</title>
+
+	<!-- Required stylesheet -->
+	<link rel="stylesheet" href="core/deck.core.css">
+
+	<!-- Extension CSS files go here. Remove or add as needed. -->
+	<link rel="stylesheet" media="screen" href="extensions/goto/deck.goto.css">
+	<link rel="stylesheet" media="screen" href="extensions/menu/deck.menu.css">
+	<link rel="stylesheet" media="screen" href="extensions/navigation/deck.navigation.css">
+	<link rel="stylesheet" media="screen" href="extensions/status/deck.status.css">
+	<link rel="stylesheet" media="screen" href="extensions/scale/deck.scale.css">
+	<link rel="stylesheet" media="screen" href="bhn/style.css">
+
+	<!-- Style theme. More available in /themes/style/ or create your own. -->
+	<link rel="stylesheet" media="screen" href="themes/style/swiss.css">
+
+	<!-- Transition theme. More available in /themes/transition/ or create your own. -->
+	<link rel="stylesheet" media="screen" href="themes/transition/horizontal-slide.css">
+
+	<!-- Basic black and white print styles -->
+	<link rel="stylesheet" media="print" href="core/print.css">
+
+	<!-- Required Modernizr file -->
+	<script src="modernizr.custom.js"></script>
+</head>
+<body>
+	<div class="deck-container">
+
+		<!-- Begin slides. Just make elements with a class of slide. -->
+
+		<section class="slide">
+			<h1>Adding Bike Trails to OpenStreetMap</h1>
+			<h2>Brian DeRocher</h2>
+			<h3>MappingDC</h3>
+		</section>
+
+		<section class="slide">
+			<h2>Brian DeRocher</h2>
+			<h3>@openbrian</h3>
+			<ul>
+				<li>Working on OpenStreetMap for 4 years</li>
+				<li>Heading up MappingDC for 2 years</li>
+				<li>I bike, but i'm mostly a mapper</li>
+				<li>brian@derocher.org</li>
+			</ul>
+		</section>
+
+		<section class="slide">
+			<h2>Mapping Gear and Navigator</h2>
+			<img src='bhn/bike.jpg' alt='bike with lucy' />
+		</section>
+
+		<section class="slide">
+			<h2>OpenStreetMap</h2>
+			<img style='float:right; width:300px' src='bhn/osm_logo.png' alt='osm logo' />
+			<h3>is a geographic database</h3>
+			<ul>
+				<li>The "Wikipedia" of maps</li>
+				<li>Free to use, free to edit, free to download</li>
+				<li>Several base layer renderings
+					<ul>
+						<li>OpenStreetMap</li>
+						<li>Cycle Map</li>
+						<li>Transport Map</li>
+						<li>Humanitarian OSM Team</li>
+						<li>Mapbox</li>
+					</ul>
+				</li>
+				<li>Exported to http://open.mapquest.com</li>
+				<li>Several APIs</li>
+				<li>A few geocoders</li>
+				<li>Many routing apps</li>
+				<li>Numerous mobile apps</li>
+			</ul>
+		</section>
+
+		<section class="slide">
+			<h2>OpenStreetMap Usage</h2>
+			<div style='float:right'>
+				<a href='http://apple.com'><img src='bhn/apple-logo.png' alt='Apple' /></a>
+			</div>
+			<ul>
+				<li>22,000 active users around the world</li>
+				<li>1,500,000 features added per day</li>
+				<li>http://wiki.openstreetmap.org/wiki/Stats</li>
+				<li>Used by
+					<ul class='image-list'>
+						<li><a href='http://foursquare.com'><img width="300" src='bhn/foursquare-logo.png' alt='Foursquare' /></a></li>
+						<li><a href="http://washingtondc.craigslist.org/nva/fuo/4430174982.html"><img src='bhn/craigslist-logo.jpg' alt='Craigslist' /></a></li>
+						<li><a href='http://pinterest.com'><img width="300" src='bhn/pinterest_logo_red.png' alt='Pinterest' /></a></li>
+						<li><a href='http://evernote.com'><img width="300" src='bhn/evernote-logo.png' alt='Evernote' /></a></li>
+						<li><a href='http://mapbox.com'><img width="300" src='bhn/mapbox-logo.png' alt='Mapbox' /></a></li>
+						<li></li>
+						<li><a href='http://state.gov'><img src='bhn/usdos-logo-seal.png' alt='US Department of State' /></a> <a href='http://mapgive.state.gov'><img width="300" src='bhn/mapgive-logo.png' alt='MapGive' /></a></li>
+					</ul>
+				</li>
+			</ul>
+		</section>
+
+		<section class="slide">
+			<h2>Pinterest Place Board</h2>
+			<img style='border: 1px solid #CCC' src='bhn/pinterest-map.png' alt='Pinterest Place Board' />
+		</section>
+
+<!--
+		<section class="slide">
+			<h2>Evernote Atlas Map</h2>
+			<img style='border: 1px solid #CCC' src='bhn/atlas_map_view.jpg' alt='Evernote Atlas Map' />
+		</section>
+-->
+
+<!--
+		<section class="slide">
+			<h2>Why not use Google?</h2>
+			<ul>
+				<li>True, it's free</li>
+				<li>But you're the product</li>
+				<li>Maps are laced with advertisements</li>
+				<li>Not all points of interest actually appear</li>
+				<li>No access to raw data</li>
+				<li>Hard to make changes in the map</li>
+				<li>API eventually costs money</li>
+				<li>Privacy</li>
+			</ul>
+		</section>
+-->
+		<section class="slide">
+			<h2>OpenStreetMap</h2>
+			<a href="http://openstreetmap.org" target="_blank">http://openstreetmap.org</a>
+			<iframe width='800' height='600' src='http://www.openstreetmap.org/#map=18/38.89457/-77.07437'></iframe>
+		</section>
+
+		<section class="slide">
+			<h2>OpenCycleMap</h2>
+			<iframe width='800' height='600' src='http://opencyclemap.org/?zoom=18&amp;lat=38.89466&amp;lon=-77.07368&amp;layers=B000'></iframe>
+		</section>
+
+		<section class="slide">
+			<h2>@capitolistdc</h2>
+			<img style='width: 500px; border: 1px solid #CCC; float:right' src='bhn/car_in_bike_lane.jpg' alt='car in bike lane' />
+			<h3>
+Someone already showing appreciation for new bike lanes on 1st St, NE by Union Station. <a href="https://twitter.com/Wash_cycle">@Wash_cycle</a> <a href="https://twitter.com/bikeshare">@bikeshare</a> <a href="http://t.co/uBq6eRUTqG">pic.twitter.com/uBq6eRUTqG</a>
+			</h3>
+			<div>
+6:10 PM - 17 Apr 2014
+			</div>
+			<div>
+<a href="https://twitter.com/capitolistdc/status/456917547351547904">https://twitter.com/capitolistdc/status/456917547351547904</a>
+			</div>
+		</section>
+
+		<section class="slide">
+			<h2>General Tagging</h2>
+			<img style='float:right' src='bhn/node-way.jpg' />
+			<ul>
+				<li><code>amenity=bar, name=Heavy Seas Alehouse</code></li>
+				<li>Vocabulary is defined on the wiki</li>
+				<li>nodes, ways, and relations</li>
+				<li>nodes: trees, benches, traffic light</li>
+				<li>way: roads, paths</li>
+				<li>way (closed): buildings, area of trees, administrative boundary</li>
+				<li>relation: W&amp;OD is a collection of ways, bus stop + node on road + pole is a relation</li>
+				<li>See also <a href='http://taginfo.openstreetmap.org/' target='_blank'>taginfo</a></li>
+				<li>For bridges, or changes in speed limit, etc. ways connec to ways</li>
+			</ul>
+		</section>
+
+		<section class="slide">
+			<h2>Bike Tagging</h2>
+			<ul>
+				<li>Good bike tagging enables routing</li>
+				<li>Roads are <code>highway=*</code></li>
+				<li><code>bicycle=yes</code> for "roads with space"</li>
+				<li><code>bicycle=designated</code> for paths meant for biking</li>
+				<li><code>foot=designated</code> for paths meant for walking / running</li>
+				<li>
+<img style='width: 200px; border: 1px solid #CCC; float:right' src='bhn/Way_A1.png' alt='Way A' />
+Way A: <code>highway=*</code>, <code>cycleway=lane</code>, "enhance the road"</li>
+				<li>- good when the cycleway is <strong>adjacent</strong> to the road</li>
+				<li>Or <code>highway=cycleway</code>, <code>cycleway=track</code></li>
+				<li>- good when the cycleway is not near a road</li>
+				<li>
+<img style='width: 200px; border: 1px solid #CCC; float:right' src='bhn/Way_AB1.png' alt='Way A B' />
+Way A: <code>highway=*</code>, Way B: <code>cycleway=track</code></li>
+				<li>- good when the cycleway is <strong>off-road</strong>, e.g. GW Parkway</li>
+				<li>additiona tags: <code>surface=asphalt</code>, <code>one-way=yes</code></li>
+				<li>sharow: <code>cycleway=shared_lane</code></li>
+				<li><code>foot=yes</code>, <code>foot=no</code></li>
+				<li>user defined tag, <code>cycleway:divider=yes</code></li>
+				<li><a href="http://wiki.openstreetmap.org/wiki/Bicycle" target="_blank">Bicycle Tagging</a> is very well defined</li>
+				<li>But if it gets too confusing see what's happening in the wild</li>
+				<li>See also <a href='http://taginfo.openstreetmap.org/keys/cycleway' target='_blank'>cycleway on taginfo</a></li>
+			</ul>
+		</section>
+
+		<section class="slide">
+			<h2>Demo of Arlington Road</h2>
+			<table>
+				<tr>
+					<td><img width='500' src='bhn/pics/img1.png' /></td>
+					<td><img width='500' src='bhn/pics/img2.png' /></td>
+				</tr>
+				<tr>
+					<td><img width='500' src='bhn/pics/img3.png' /></td>
+					<td><img width='500' src='bhn/pics/img4.png' /></td>
+				</tr>
+			</table>
+		</section>
+
+		<section class="slide">
+			<h2>Improves Routing, you say?</h2>
+			<ul>
+				<li><a href="http://mappingdc.org/osrm/">http://mappingdc.org/osrm/</a></li>
+				<li>Only 2 days old, Help me improve it :D</li>
+			</ul>
+			<iframe width='1000' height='600' src='http://mappingdc.org/osrm/'></iframe>
+		</section>
+
+		<section class="slide">
+			<h2>How to Edit</h2>
+			<ul>
+				<li>Create an account at <a href="http://openstreetmap.org">http://openstreetmap.org</a></li>
+				<li>iD editor - web based, simple and fast</li>
+				<li><a href="http://www.openstreetmap.org/edit#map=20/38.89480/-77.07367" target="_blank">Edit Arlington</a></li>
+				<li>JOSM editor - desktop app, powerful</li>
+			</ul>
+		</section>
+
+<!--
+		<section class="slide">
+			<h2></h2>
+			<ul>
+				<li>http://stateofthemap.us/session/slide/</li>
+			</ul>
+		</section>
+-->
+
+		<section class="slide">
+			<h2>MappingDC</h2>
+			<h3>@mappingdc</h3>
+			<img style='float:right' src='bhn/mappingdc_logo.png' alt='mappingdc logo' />
+			<ul>
+				<li>Mission: To improve OSM in the DC Metro area</li>
+				<li>Mailing list on Google Groups</li>
+				<li>MappingDC on Facebook</li>
+				<li>http://mappingdc.org</li>
+				<li>http://meetup.com/MappingDC</li>
+				<li>Edit-a-thons</li>
+				<li>Mappy Hours on 2nd Tuesday of June, August, October, December at Cap City</li>
+				<li>Mapping Parties occassionally
+					<ul>
+						<li>Hyattsville</li>
+						<li>Falls Church</li>
+						<li>Congressional Cemetery (with Wikimania)</li>
+						<li>DC buiding/address import process being rekindled</li>
+					</ul>
+				</li>
+			</ul>
+		</section>
+
+		<section class="slide">
+			<h2>Adding Bike Trails to OpenStreetMap</h2>
+			<p>Thank You</p>
+			<p>Brian DeRocher</p>
+			<p>@openbrian</p>
+		</section>
+
+		<!-- End slides. -->
+
+		<!-- Begin extension snippets. Add or remove as needed. -->
+
+		<!-- deck.navigation snippet -->
+		<div aria-role="navigation">
+			<a href="#" class="deck-prev-link" title="Previous">&#8592;</a>
+			<a href="#" class="deck-next-link" title="Next">&#8594;</a>
+		</div>
+
+		<!-- deck.status snippet -->
+		<p class="deck-status" aria-role="status">
+			<span class="deck-status-current"></span>
+			/
+			<span class="deck-status-total"></span>
+		</p>
+
+		<!-- deck.goto snippet -->
+		<form action="." method="get" class="goto-form">
+			<label for="goto-slide">Go to slide:</label>
+			<input type="text" name="slidenum" id="goto-slide" list="goto-datalist">
+			<datalist id="goto-datalist"></datalist>
+			<input type="submit" value="Go">
+		</form>
+
+		<!-- End extension snippets. -->
+	</div>
+
+<!-- Required JS files. -->
+<script src="jquery.min.js"></script>
+<script src="core/deck.core.js"></script>
+
+<!-- Extension JS files. Add or remove as needed. -->
+<script src="extensions/menu/deck.menu.js"></script>
+<script src="extensions/goto/deck.goto.js"></script>
+<script src="extensions/status/deck.status.js"></script>
+<script src="extensions/navigation/deck.navigation.js"></script>
+<script src="extensions/scale/deck.scale.js"></script>
+
+<!-- Initialize the deck. You can put this in an external file if desired. -->
+<script>
+	$(function() {
+		$.deck('.slide');
+	});
+</script>
+</body>
+</html>
